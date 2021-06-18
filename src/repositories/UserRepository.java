@@ -48,4 +48,19 @@ public class UserRepository {
         return c;
     }
 
+    public User findByUsername(String username){
+        User user = null;
+        String query = "SELECT * FROM user WHERE username=?";
+        try (Connection con = DBUtils.getConnection(); PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setString(1, username);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                user = new User(rs.getString(2), rs.getString(3), rs.getString(4));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return user;
+    }
+
 }

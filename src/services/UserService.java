@@ -33,7 +33,9 @@ public class UserService {
 
     public void register(String firstName, String lastName, String username,
                          String password, String confirmPassword, HttpServletRequest request) {
-
+        if(userRepository.findByUsername(username) != null){
+            request.setAttribute("errormessage", "This username already exists");
+        }
         if (firstName.length() < 1 || lastName.length() < 1) {
             request.setAttribute("errormessage", "Please enter your names");
         } else if (username.length() < 1) {
@@ -60,15 +62,15 @@ public class UserService {
 
 
     public String handleRegisterPage(HttpServletRequest request) {
-        if (request.getAttribute("errormessage") != null) {
+        if (request.getAttribute("errormessage") == null) {
             return "Login.jsp";
         } else {
-            return "main.jsp";
+            return "Register.jsp";
         }
     }
 
     public String handleLoginPage(HttpServletRequest request) {
-        if (request.getAttribute("errormessage") != null) {
+        if (request.getAttribute("errormessage") == null) {
             return "main.jsp";
         } else {
             return "Login.jsp";

@@ -20,17 +20,17 @@
     <form action="doLogin" method="POST">
         <h2 class="text-center">Log in</h2>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" required name="username">
+            <input type="text" class="form-control" placeholder="Username" name="username">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" required name="password">
+            <input type="password" class="form-control" placeholder="Password" name="password">
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">Log in</button>
         </div>
         <div class="clearfix">
             <%if (request.getAttribute("errormessage") != null) {%>
-            <p>Invalid Password! Please try again</p>
+            <p>${errormessage}</p>
             <%}%>
         </div>
     </form>
