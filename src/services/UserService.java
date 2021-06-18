@@ -71,7 +71,7 @@ public class UserService {
 
     public String handleLoginPage(HttpServletRequest request) {
         if (request.getAttribute("errormessage") == null) {
-            return "main.jsp";
+            return "BookServlet";
         } else {
             return "Login.jsp";
         }

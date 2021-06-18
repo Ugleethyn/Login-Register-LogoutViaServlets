@@ -1,7 +1,3 @@
-<%@ page import="repositories.BookRepository" %>
-<%@ page import="models.Book" %>
-<%@ page import="java.util.List" %>
-
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
@@ -21,6 +17,10 @@
     <b> ${sessionScope.user.username}</b>
     <br><br>
     <a href="logout">Logout</a>
+
+    <c:set var = "books" value = "${books}" />
+    ${fn:length(books)}
+
     <c:forEach items="${books}" var="book">
         <tr>
             <td>${book.id}</td>

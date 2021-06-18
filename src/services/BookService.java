@@ -3,6 +3,7 @@ package services;
 import models.Book;
 import repositories.BookRepository;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public class BookService {
@@ -19,8 +20,9 @@ public class BookService {
     }
 
 
-    public List<Book> getAllBooks() {
-        return bookRepository.getBooks();
+    public void getAllBooks(HttpServletRequest req) {
+        List<Book> books = bookRepository.getBooks();
+        req.setAttribute("books",books);
     }
 
 }

@@ -1,9 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : Jun 17, 2021, 2:42:41 AM
-    Author     : Ugleethyn
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

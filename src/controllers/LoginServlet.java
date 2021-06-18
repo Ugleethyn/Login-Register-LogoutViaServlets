@@ -1,6 +1,7 @@
 package controllers;
 
 import models.User;
+import services.BookService;
 import services.UserService;
 
 import javax.servlet.RequestDispatcher;
@@ -15,7 +16,6 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
 
     private UserService userService = UserService.getInstance();
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
