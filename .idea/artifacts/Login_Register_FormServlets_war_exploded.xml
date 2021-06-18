@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Login-Register FormServlets:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Login_Register_FormServlets_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Login-Register FormServlets/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Login-Register FormServlets" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="mysql-connector-java-8.0.22" />
+          <element id="library" level="project" name="jstl-1.2" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
