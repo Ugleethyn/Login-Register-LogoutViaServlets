@@ -23,9 +23,11 @@ public class UserService {
         User user = userRepository.login(username, password);
         if (user == null) {
             request.setAttribute("errormessage", "Invalid Password or username");
+        } else {
+            HttpSession session = request.getSession();
+            session.setAttribute("user", user);
         }
-        HttpSession session = request.getSession();
-        session.setAttribute("user", user);
+
         return user;
     }
 
